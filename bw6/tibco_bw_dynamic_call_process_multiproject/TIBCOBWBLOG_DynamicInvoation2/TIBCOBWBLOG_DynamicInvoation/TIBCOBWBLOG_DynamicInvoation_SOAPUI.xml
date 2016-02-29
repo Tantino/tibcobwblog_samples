@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ef71a7f3-3e48-4142-ba44-99fa5b7b581e" activeEnvironment="Default" name="Process_gen1" resourceRoot="" soapui-version="5.2.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="880df55a-4966-419a-a968-048838ac4151" wsaVersion="NONE" name="SOAPServiceBinding" type="wsdl" bindingName="{http://www.example.org/wsdl/1456140138442}SOAPServiceBinding" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/rramosor/Desktop/Process_gen1.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\Users\rramosor\Desktop\Process_gen1.wsdl"><con:part><con:url>file:\C:\Users\rramosor\Desktop\Process_gen1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Process" targetNamespace="http://www.example.org/wsdl/1456140138442" xmlns:ns="http://www.example.org/wsdl/1456140138442" xmlns:ns0="http://www.example.org/schema/1456140138521" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="unqualified" targetNamespace="http://www.example.org/schema/1456140138521" xmlns:tns="http://www.example.org/schema/1456140138521">
+      <xsd:element name="operationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="operation1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="operation1Request">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="operationRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="operationRequest">
+    <wsdl:part element="ns0:operationRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="operationResponse">
+    <wsdl:part element="ns0:operationResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="Process">
+    <wsdl:operation name="operation">
+      <wsdl:input message="ns:operationRequest" name="operationInput"/>
+      <wsdl:output message="ns:operationResponse" name="operationOutput"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPServiceBinding" type="ns:Process">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="operation">
+      <soap:operation soapAction="operation" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Process">
+    <wsdl:port binding="ns:SOAPServiceBinding" name="ProcessSOAP">
+      <soap:address location="http://localhost:8080/SOAPServiceBinding/process/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/SOAPServiceBinding/process/</con:endpoint></con:endpoints><con:operation id="83363801-512b-4f76-8ef7-98b51beefea1" isOneWay="false" action="operation" name="operation" bindingOperationName="operation" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44e2245a-280c-4d1f-b5a9-64da97eb60e0" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/SOAPServiceBinding/process/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.example.org/schema/1456140138521">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:operationRequest>\r
+         <in>ChildB</in>\r
+      </ns:operationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="operation"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="6e263e2f-2c42-4405-b439-da27fca9be36" name="TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="2b295855-2bf9-4b57-8c2a-4425859927dc" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="3ed794b1-dafd-4cd8-8532-553c19f753d9" name="ChildA"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPServiceBinding</con:interface><con:operation>operation</con:operation><con:request name="ChildA" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="6d9fa809-ed71-437f-b4d3-f3b610da7175"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/SOAPServiceBinding/process/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.example.org/schema/1456140138521">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:operationRequest>\r
+         <in>ChildA</in>\r
+      </ns:operationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="364cbe21-f305-412c-9a16-b2ace3bffe4e" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="operation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="1c154b74-28ab-4108-b1e4-b5a27344257b" name="ChildB"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPServiceBinding</con:interface><con:operation>operation</con:operation><con:request name="ChildB" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="6d9fa809-ed71-437f-b4d3-f3b610da7175"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/SOAPServiceBinding/process/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.example.org/schema/1456140138521">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:operationRequest>\r
+         <in>ChildB</in>\r
+      </ns:operationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="364cbe21-f305-412c-9a16-b2ace3bffe4e" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="operation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="8796da40-8720-4e4b-bab0-e5e2ef9fb16d" name="ChildC"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPServiceBinding</con:interface><con:operation>operation</con:operation><con:request name="ChildC" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="6d9fa809-ed71-437f-b4d3-f3b610da7175"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/SOAPServiceBinding/process/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.example.org/schema/1456140138521">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:operationRequest>\r
+         <in>ChildC</in>\r
+      </ns:operationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="364cbe21-f305-412c-9a16-b2ace3bffe4e" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="operation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="63010cf6-bd45-44f3-ac8f-2c443980174f" name="Subprocess.A.ChildA1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPServiceBinding</con:interface><con:operation>operation</con:operation><con:request name="Subprocess.A.ChildA1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="6d9fa809-ed71-437f-b4d3-f3b610da7175"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/SOAPServiceBinding/process/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.example.org/schema/1456140138521">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:operationRequest>\r
+         <in>ChildA1</in>\r
+      </ns:operationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="364cbe21-f305-412c-9a16-b2ace3bffe4e" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="operation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="4857fa39-3787-4607-8546-6fa830afe447" name="Subprocess.A.ChildB1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPServiceBinding</con:interface><con:operation>operation</con:operation><con:request name="Subprocess.A.ChildB1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="6d9fa809-ed71-437f-b4d3-f3b610da7175"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/SOAPServiceBinding/process/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.example.org/schema/1456140138521">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:operationRequest>\r
+         <in>ChildB1</in>\r
+      </ns:operationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="364cbe21-f305-412c-9a16-b2ace3bffe4e" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="operation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="6bd3ee68-4283-4e7d-939e-871dd4d1a008" name="Subprocess.A.ChildC1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SOAPServiceBinding</con:interface><con:operation>operation</con:operation><con:request name="Subprocess.A.ChildC1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="6d9fa809-ed71-437f-b4d3-f3b610da7175"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/SOAPServiceBinding/process/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.example.org/schema/1456140138521">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ns:operationRequest>\r
+         <in>ChildC1</in>\r
+      </ns:operationRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="364cbe21-f305-412c-9a16-b2ace3bffe4e" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="operation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
